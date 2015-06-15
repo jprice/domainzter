@@ -1,0 +1,6 @@
+/lumen.log
+/node_modules
+/vendor
+.env
+.idea
+PersonalDomainSeeder.php

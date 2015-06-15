@@ -1,0 +1,13 @@
+{
+  "name": "domainzter",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Domainzter is a self-hosted domain control panel - a simple web app to keep track of domains.",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-less": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "*"
+  }
+}
