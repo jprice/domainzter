@@ -18,9 +18,9 @@ Domainzter is built with [Lumen](http://lumen.laravel.com/) <3.
 A preview of the app will soon be available at [domainzter.com](http://domainzter.com).
 
 ## Installation
-A few things is required in order to get domainzter to work. You need to have [composer](https://getcomposer.org/), [npm](https://www.npmjs.com/) and [bower](http://bower.io/) installed.
-It is (obviously) also expected to have some form of webserver and database set up. I'm using nginx and mysql myself.
+A few things is required in order to get domainzter to work. It is expected to have some form of webserver and database set up. I'm using nginx and mysql myself.
 
+### Up and running
 To get the app up and running, follow these steps:
 - Clone Domainzter repository
 ```
@@ -31,6 +31,23 @@ $ git clone https://github.com/ThomasBS/domainzter.git
 ```
 $ composer install
 ```
+
+- Environment configurations need to be set
+
+There's a ``.env.example`` file included in the repo. Rename this file to ``.env`` and edit to fit your settings.
+
+- [Database Migrations](http://laravel.com/docs/5.1/migrations)
+```
+$ php artisan migrate
+```
+
+- Great Success!
+
+Domainzter should now be ready to please your needs.
+
+### Extend/Customize domainzter
+If you want to further develop upon domainzter, there's a few additional steps to follow. These steps will (only) be necessary to build the concatinated and minified js and css files (``asset/js/app.js``, ``assets/css/app.css`` etc). You will need to have [composer](https://getcomposer.org/), [npm](https://www.npmjs.com/) and [bower](http://bower.io/) installed.
+Once installed, follow these steps:
 
 - Install npm dependencies and gulp
 ```
@@ -49,18 +66,7 @@ $ gulp
 $ gulp watch
 ```
 
-- Environment configurations need to be set
-
-There's a ``.env.example`` file included in the repo. Rename this file to ``.env`` and edit to fit your settings.
-
-- [Database Migrations](http://laravel.com/docs/5.1/migrations)
-```
-$ php artisan migrate
-```
-
-- Great Success!
-
-Domainzter should now be ready to please your needs.
+- 2x Great Success!
 
 ## Todos
 - [ ] Translations / Support for more languages
