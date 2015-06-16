@@ -24,7 +24,7 @@ It is (obviously) also expected to have some form of webserver and database set 
 To get the app up and running, follow these steps:
 - Clone Domainzter repository
 ```
-$ git clone github.com/ThomasBS/domainzter
+$ git clone https://github.com/ThomasBS/domainzter.git
 ```
 
 - Install composer dependencies defined in ``composer.json``
