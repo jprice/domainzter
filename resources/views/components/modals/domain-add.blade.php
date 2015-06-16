@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label for="category">Category</label>
                                 <select class="form-control" id="category_id" name="category_id">
-                                    <option value="">None</option>
+                                    <option value="0">None</option>
                                     <option ng-repeat="category in domainCtrl.categories" value="[[ category.id ]]">[[ category.name]]</option>
                                 </select>
                             </div>
