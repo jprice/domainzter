@@ -80,7 +80,6 @@ $ gulp watch
     - [ ] Language selection
     - [ ] Layout choices
     - [ ] Auto-update option (ex. Fetch domain info every hour)
-- [ ] Guzzle 6.0 upgrade
 - [ ] Tooltips various places
 - [ ] Tests (?)
 
