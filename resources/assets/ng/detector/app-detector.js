@@ -736,6 +736,11 @@
                 icon: 'dinkly.ico',
                 url: 'https://github.com/lewsid/dinkly/',
                 priority: 1.5
+            },
+            'CloudFlare': {
+                icon: 'cloudflare.ico',
+                url: 'http://cloudflare.com',
+                priority: 5
             }
         };
 
@@ -940,6 +945,7 @@
                     'server': {
                         'Apache': /Apache\/?(.*)/,
                         'nginx': /nginx\/?(.*)/,
+                        'CloudFlare': /cloudflare-nginx\/?(.*)/,
                         'IIS': /Microsoft-IIS\/?(.*)/
                     },
                     'via': {
