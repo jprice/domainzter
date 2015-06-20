@@ -74,7 +74,7 @@ $ gulp watch
 - [ ] Bulk-add domains
 - [ ] Redesign icons for apps
 - [ ] Notifications
-    - [ ] When domain is about to expire
+    - [x] When domain is about to expire
     - [ ] When updates are available for tools used on domain
 - [ ] Settings page
     - [ ] Language selection
