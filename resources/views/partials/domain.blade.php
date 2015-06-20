@@ -60,7 +60,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h4>Expiration date</h4>
+                <h4>Expiration date <i ng-if="singleDomainCtrl.domainInfo.closeExpiration" class="fa fa-warning status-unknown"></i></h4>
                 <p ng-if="singleDomainCtrl.domainInfo.expiration">[[ singleDomainCtrl.domainInfo.expiration * 1000 | date:'dd/MM/yyyy' ]]</p>
                 <button class="btn default" ng-click="singleDomainCtrl.editableExpiration = true" ng-if="!singleDomainCtrl.editableExpiration"><i class="fa fa-plus"></i> Edit expiration date</button>
                 <input class="form-control" type="date" min="2015-01-01" ng-model="singleDomainCtrl.newExpiration" ng-if="singleDomainCtrl.editableExpiration" />
