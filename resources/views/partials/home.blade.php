@@ -27,6 +27,7 @@
                     <td ng-bind="domainCtrl.getCategoryName(domain.category_id) || 'None'"></td>
                     <td class="td-status">
                         <i class="fa fa-circle" ng-class="domain.active ? 'status-ok' : 'status-error'"></i>
+                        <i ng-if="domain.closeExpiration" class="fa fa-warning status-unknown"></i>
                     </td>
                     <td>
                         <a href="[[ '{{ route('domains.show', ['id' => null]) }}/'+ domain.id ]]"><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></a>
