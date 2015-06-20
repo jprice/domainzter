@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\TBS\Domain\DomainCategoryRepository;
 use App\TBS\Domain\DomainRepository;
 use App\TBS\Guzzle\GuzzleWrapper;
+use DateTime;
 use Illuminate\Http\Request;
 
 class DomainController extends Controller
@@ -54,7 +55,15 @@ class DomainController extends Controller
      */
     public function getAll()
     {
-        return response()->json($this->domainRepository->all());
+        $domains = $this->domainRepository->all();
+
+        foreach ($domains as $domain) {
+            if ($domain->expiration) {
+                $this->checkDomainExpiration($domain);
+            }
+        }
+
+        return response()->json($domains);
     }
 
     /**
@@ -221,5 +230,24 @@ class DomainController extends Controller
             'success' => 'Domain expiration updated',
             'expiration' => strtotime($domain->expiration)
         ]);
+    }
+
+    /**
+     * Check if the domains expiration date is within the expiration notification interval
+     * and set an attribute to be handled frontend if it is
+     *
+     * @param \App\TBS\Domain\Domain $domain
+     *
+     * @return \App\TBS\Domain\Domain
+     */
+    private function checkDomainExpiration($domain)
+    {
+        $expirationInterval = env('EXPIRATION_NOTIFICATION', 30);
+
+        if (new DateTime($domain->expiration) <= new DateTime('+'.$expirationInterval.' days')) {
+            $domain->closeExpiration = true;
+        }
+
+        return $domain;
     }
 }
