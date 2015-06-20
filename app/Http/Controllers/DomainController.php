@@ -78,6 +78,7 @@ class DomainController extends Controller
         $domain = $this->domainRepository->find($domainId);
 
         if ($domain->expiration) {
+            $this->checkDomainExpiration($domain);
             $domain->expiration = strtotime($domain->expiration);
         }
 
